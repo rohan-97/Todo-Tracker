@@ -1,0 +1,18 @@
+{
+ "manifest_version": 2,
+ "name": "New Tab",
+ "description": "See your world whenever you open new tab",
+ "version": "1",
+ "author": "Rohan Yadav",
+"browser_action": {
+   "default_icon": "images/tab_icon.png",
+   "default_title": "Have a good day"
+ },
+"chrome_url_overrides" : {
+  "newtab": "newtab.html"
+},
+ "permissions": [
+   "activeTab",
+   "tabs"
+ ]
+}
