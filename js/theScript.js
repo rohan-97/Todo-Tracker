@@ -13,7 +13,6 @@ $("ul").on("click" , "span" ,function(argument) {
 		$(this).remove();
 	});
 	removeFromList($(this).parent().attr('id'));
-	argument.stopPropogation();
 });
 
 $("input").on("keypress",function (argument) {
