@@ -12,12 +12,14 @@ $("ul").on("click" , "span" ,function(argument) {
 	$(this).parent().fadeOut(500,function() {
 		$(this).remove();
 	});
+	removeFromList($(this).parent().attr('id'));
 	argument.stopPropogation();
 });
 
 $("input").on("keypress",function (argument) {
 	if(argument.which===13){
 		element_obj = {
+			id : Math.random().toString(36).substring(2),
 			value : $(this).val(),
 			isdone : false
 		};
@@ -37,15 +39,19 @@ function addToList(stuff_to_add, in_the_beninging = false, add_to_localstorage =
 		add_to_local_storage(stuff_to_add);
 	}
 	if(stuff_to_add.isdone){
-		tag_to_add = "<li class='checked'><span> <i class='fa fa-trash'></i> </span>" + stuff_to_add.value + "</li>";
+		tag_to_add = "<li id='"+stuff_to_add.id+"' class='checked'><span> <i class='fa fa-trash'></i> </span>" + stuff_to_add.value + "</li>";
 	} else {
-		tag_to_add = "<li><span> <i class='fa fa-trash'></i> </span>" + stuff_to_add.value + "</li>";
+		tag_to_add = "<li id='"+stuff_to_add.id+"'><span> <i class='fa fa-trash'></i> </span>" + stuff_to_add.value + "</li>";
 	}
 	if (in_the_beninging){
 		$('ul').prepend(tag_to_add);
 	} else {
 		$('ul').append(tag_to_add);
 	}
+}
+
+function removeFromList(task_id) {
+	chrome.storage.sync.get(['todo_list'], result => chrome.storage.sync.set({todo_list: result.todo_list.filter(ele=>ele.id!=task_id)}));
 }
 
 function add_to_local_storage(stuff_to_add) {
