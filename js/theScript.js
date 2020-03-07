@@ -28,7 +28,7 @@ $("input").on("keypress",function (argument) {
 
 /**
  * @function addToList
- * @param  {object} stuff_to_add    {adds a specific stting to to-do list}
+ * @param  {object} stuff_to_add    {adds a specific entry to to-do list}
  * @param  {boolean} in_the_beninging {By default it is false, if it is set to true, adds to the starting of the list otherwise adds to the end of list}
  * @return {none} {Unfortunately this function returns nothing :)}
  */
