@@ -6,15 +6,15 @@ chrome.storage.sync.get(['todo_list'], result => {
 
 $("ul").on("click","li",function (argument) {
 	$(this).toggleClass("check");
-	toggleIsDoneStatus($(this).attr('id'))
+	toggleIsDoneStatus($(this).attr('id'));
 });
 
-$("ul").on("click" , "span" ,function(argument) {
+$("ul").on("click" , "span" ,function(event) {
 	$(this).parent().fadeOut(500,function() {
 		$(this).remove();
 	});
 	removeFromList($(this).parent().attr('id'));
-	argument.stopPropogation();
+	event.stopPropagation();
 });
 
 $("input").on("keypress",function (argument) {
