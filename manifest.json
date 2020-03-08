@@ -1,17 +1,27 @@
 {
- "manifest_version": 2,
- "name": "My New Tab",
- "description": "Track your tasks whenever you open a new tab",
- "version": "1.1",
- "author": "Rohan Yadav",
-"browser_action": {
-   "default_icon": "images/tab_icon.png",
-   "default_title": "New Tab Bucket List"
- },
-"chrome_url_overrides" : {
-  "newtab": "newtab.html"
-},
- "permissions": [
-   "storage"
- ]
+  "manifest_version": 2,
+  "name": "To-do Bucket List",
+  "description": "Track your tasks whenever you open a new tab",
+  "version": "2.1",
+  "author": "Rohan Yadav",
+  "icons": {
+    "16": "images/16_todo_icon.png",
+    "24": "images/24_todo_icon.png",
+    "32": "images/32_todo_icon.png",
+    "48": "images/48_todo_icon.png",
+    "64": "images/64_todo_icon.png",
+    "72": "images/72_todo_icon.png",
+    "96": "images/96_todo_icon.png",
+    "128": "images/128_todo_icon.png"
+  },
+  "browser_action": {
+    "default_icon": "images/tab_icon.png",
+    "default_title": "To-do Bucket List"
+  },
+  "chrome_url_overrides" : {
+    "newtab": "newtab.html"
+  },
+  "permissions": [
+    "storage"
+  ]
 }
