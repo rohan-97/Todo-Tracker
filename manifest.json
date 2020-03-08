@@ -12,8 +12,6 @@
   "newtab": "newtab.html"
 },
  "permissions": [
-   "activeTab",
-   "tabs",
    "storage"
  ]
 }
