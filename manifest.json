@@ -1,6 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "To-do Bucket List",
+  "name": "The To-do List",
+  "short_name": "My todo List",
   "description": "Track your tasks whenever you open a new tab",
   "version": "0.0.0.1",
   "author": "Rohan Yadav",
@@ -17,6 +18,10 @@
   "browser_action": {
     "default_icon": "images/tab_icon.png",
     "default_title": "To-do Bucket List"
+  },
+  "background" : {
+    "scripts" : ["js/background.js"],
+    "persistent": false
   },
   "chrome_url_overrides" : {
     "newtab": "newtab.html"
