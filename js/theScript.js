@@ -4,6 +4,14 @@ chrome.storage.sync.get(['todo_list'], result => {
 	}
 });
 
+// fetch("https://jira.protegrity.com:8443/rest/api/2/search?jql=key%20in%20(PTY-75548%2C%20PTY-75547)")
+// .then(data=>{return data.json()})
+// .then(data=>console.log(data))
+chrome.runtime.sendMessage({action: "authenticate"}, function(response) {
+	console.log(response.resp);
+});
+
+
 $("ul").on("click","li",function (argument) {
 	$(this).toggleClass("check");
 	toggleIsDoneStatus($(this).attr('id'));
