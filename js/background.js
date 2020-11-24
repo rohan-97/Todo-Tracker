@@ -19,3 +19,7 @@ chrome.runtime.onMessage.addListener(
         // });
 
     });
+    
+function test_rebase_works(){
+    console.log("It works")
+}
