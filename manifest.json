@@ -16,7 +16,7 @@
   },
   "browser_action": {
     "default_icon": "images/tab_icon.png",
-    "default_title": "To-do Bucket List"
+    "default_title": "Todo Tracker"
   },
   "chrome_url_overrides" : {
     "newtab": "newtab.html"
