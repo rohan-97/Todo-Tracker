@@ -1,8 +1,21 @@
-chrome.storage.sync.get(['todo_list'], result => {
-	if(result.todo_list instanceof Array){
-		result.todo_list.forEach(element => addToList(element))
+function get_list() {
+	res = localStorage.getItem('todo_list');
+	if(res === null){
+		return [];
 	}
-});
+	return JSON.parse(res);
+}
+
+function set_list(stuff) {
+	localStorage.setItem('todo_list', JSON.stringify(stuff));
+}
+
+function populate_screen() {
+	res = get_list();
+	res.forEach(element => addToList(element));	
+}
+
+populate_screen()
 
 $("ul").on("click","li",function (argument) {
 	$(this).toggleClass("check");
@@ -53,24 +66,22 @@ function addToList(stuff_to_add, in_the_beninging = false, add_to_localstorage =
 }
 
 function removeFromList(task_id) {
-	chrome.storage.sync.get(['todo_list'], result => chrome.storage.sync.set({todo_list: result.todo_list.filter(ele=>ele.id!=task_id)}));
+	lst = get_list();
+	set_list(lst.filter(ele=>ele.id!=task_id));
 }
 
 function add_to_local_storage(stuff_to_add) {
-	chrome.storage.sync.get(['todo_list'], result => {
-		todo_arr = (result.todo_list instanceof Array)? result.todo_list : [];
-		todo_arr.unshift(stuff_to_add);
-		chrome.storage.sync.set({todo_list: todo_arr});
-	});
+	arrey = get_list();
+	arrey.unshift(stuff_to_add);
+	set_list(arrey);
 }
 
 function toggleIsDoneStatus(task_id) {
-	chrome.storage.sync.get(['todo_list'], result => {
-		result.todo_list.map(element => {
-			if(element.id == task_id){
-				element.isdone = !element.isdone;
-			}
-		})
-		chrome.storage.sync.set({todo_list: result.todo_list});
+	arrey = get_list();
+	arrey.map(element => {
+		if(element.id == task_id){
+			element.isdone = !element.isdone;
+		}
 	});
+	set_list(arrey);
 }
