@@ -12,3 +12,11 @@ Click on Load Unpacked and select the downloaded/cloned directory
 
 Following is the working demo of the New Tab extension
 ![working-demo](https://github.com/rohan-97/NewTab-Chrome-Extention/blob/master/images/to_do_list.gif)
+
+Some features added in Todo Queue
+ - Associate tasks with priority
+ - Associate tasks with deadline
+ - Generate notes of task completed/incomplete on daily basis for tracking purpose
+ - Allow dragging tasks up/down so that we can order tasks
+
+Pull requests are always welcome :)
