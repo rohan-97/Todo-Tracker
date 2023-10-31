@@ -2,23 +2,23 @@
   "manifest_version": 3,
   "name": "Todo Tracker",
   "description": "Track your tasks whenever you open a new tab",
-  "version": "0.0.0.1",
+  "version": "2.0",
   "author": "Rohan Yadav",
   "icons": {
-    "16": "images/16_todo_icon.png",
-    "24": "images/24_todo_icon.png",
-    "32": "images/32_todo_icon.png",
-    "48": "images/48_todo_icon.png",
-    "64": "images/64_todo_icon.png",
-    "72": "images/72_todo_icon.png",
-    "96": "images/96_todo_icon.png",
-    "128": "images/128_todo_icon.png"
+    "16": "src/assets/16_todo_icon.png",
+    "24": "src/assets/24_todo_icon.png",
+    "32": "src/assets/32_todo_icon.png",
+    "48": "src/assets/48_todo_icon.png",
+    "64": "src/assets/64_todo_icon.png",
+    "72": "src/assets/72_todo_icon.png",
+    "96": "src/assets/96_todo_icon.png",
+    "128": "src/assets/128_todo_icon.png"
   },
-  "browser_action": {
-    "default_icon": "images/tab_icon.png",
+  "action": {
+    "default_icon": "src/assets/tab_icon.png",
     "default_title": "Todo Tracker"
   },
   "chrome_url_overrides" : {
-    "newtab": "newtab.html"
+    "newtab": "dist/index.html"
   }
 }
