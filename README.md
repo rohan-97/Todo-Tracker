@@ -1,27 +1,22 @@
-# React + TypeScript + Vite
+# NewTab-Chrome-Extention
+A google chrome extension for customized new tab which displays a to-do list
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Increase your productivity by adding to-do list right at your Newtab screen of your browser
 
-Currently, two official plugins are available:
+Setps to load the extension:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clone this repository or downlaod the zip file  
+Open Google chrome and navigate to chrome://extensions/  
+Enable Developer mode and you will be able to see Load Unpacked option  
+Click on Load Unpacked and select the downloaded/cloned directory  
 
-## Expanding the ESLint configuration
+Following is the working demo of the New Tab extension
+![working-demo](https://github.com/rohan-97/NewTab-Chrome-Extention/blob/master/images/to_do_list.gif)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Some features added in Todo Queue
+ - Associate tasks with priority
+ - Associate tasks with deadline
+ - Generate notes of task completed/incomplete on daily basis for tracking purpose
+ - Allow dragging tasks up/down so that we can order tasks
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Pull requests are always welcome :)
