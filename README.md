@@ -13,7 +13,31 @@ Click on Load Unpacked and select the downloaded/cloned directory
 Following is the working demo of the New Tab extension
 ![working-demo](https://github.com/rohan-97/NewTab-Chrome-Extention/blob/master/to_do_list.gif)
 
-Some features added in Todo Queue
+## Steps for building extension
+
+install npm on the system and navigate to the root directory of this project and execute following commands
+
+
+1. Initialize the node modules using following command
+```
+npm install
+```
+
+2. Build the bundled files
+```
+npm run build
+```
+
+The first command should download all the dependencies under the node_modules directory
+
+The second command should bundle all the scripts under dist directory on the top of project  
+
+Naviagate to chrome and use following URL to access the [extension page](chrome://extensions)  
+
+and hit load unpacked button and select the dist directory created inside this repository, your new tab should show the to-do list
+
+
+## Some features added in Todo Queue
  - Associate tasks with priority
  - Associate tasks with deadline
  - Generate notes of task completed/incomplete on daily basis for tracking purpose
