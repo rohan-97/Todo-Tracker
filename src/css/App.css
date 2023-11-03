@@ -10,7 +10,7 @@
 	text-decoration:line-through
 }
 
-h1{
+.todo-h1{
 	background: #2980b9;
 	color: white;
 	margin: 0;
@@ -20,29 +20,31 @@ h1{
 	font-weight: 400;
 }
 
-ul{
+.todo-ul{
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-li{
+.todo-li{
 	background: #fff;
 	height: 40px;
 	line-height: 40px;
 	color: #666;
 	font-size: 1.5em;
 }
-li:nth-child(2n){
+.todo-li:nth-child(2n){
 	background: #f7f7f7;
+}
+.todo-container{
+	font-family: Roboto;
 }
 body{
 	background: #355C7D;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	font-family: Roboto;
 }
-input{
+.todo-input{
 	box-sizing: border-box;
 	width: 100%;
 	padding: 13px 13px 13px 20px;
@@ -51,7 +53,7 @@ input{
 	color: #2980b9;
 	border:  3px solid rgba(0,0,0,0);
 }
-input:focus{
+.todo-input:focus{
 	background: white;
 	border: 3px solid #2980b9;
 	outline: none;
@@ -59,7 +61,7 @@ input:focus{
 .fa-check-circle{ 
 	float: right;
 }
-span{
+.todo-span{
 	background: #e74c3c;
 	height: 40px;
 	color: white;
@@ -70,7 +72,22 @@ span{
 	transition: 0.2s linear;
 	opacity: 0;
 }
-li:hover span{
+.todo-li:hover span{
 	width: 40px;
 	opacity: 1.0;
+}
+
+
+.rohan-task-list-item {
+    list-style-type: none;
+}
+.rohan-task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+.history {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+	font-size: 14px;
+	line-height: 1.6;
 }
