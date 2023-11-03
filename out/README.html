@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>NewTab-Chrome-Extention</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="newtab-chrome-extention">NewTab-Chrome-Extention</h1>
+<p>A google chrome extension for customized new tab which displays a to-do list</p>
+<p>Increase your productivity by adding to-do list right at your Newtab screen of your browser</p>
+<p>Setps to load the extension:</p>
+<p>Clone this repository or downlaod the zip file<br>
+Open Google chrome and navigate to chrome://extensions/<br>
+Enable Developer mode and you will be able to see Load Unpacked option<br>
+Click on Load Unpacked and select the downloaded/cloned directory</p>
+<p>Following is the working demo of the New Tab extension
+<img src="https://github.com/rohan-97/NewTab-Chrome-Extention/blob/master/to_do_list.gif" alt="working-demo"></p>
+<h2 id="steps-for-building-extension">Steps for building extension</h2>
+<p>install npm on the system and navigate to the root directory of this project and execute following commands</p>
+<ol>
+<li>Initialize the node modules using following command</li>
+</ol>
+<pre><code>npm install
+</code></pre>
+<ol start="2">
+<li>Build the bundled files</li>
+</ol>
+<pre><code>npm run build
+</code></pre>
+<p>The first command should download all the dependencies under the node_modules directory</p>
+<p>The second command should bundle all the scripts under dist directory on the top of project</p>
+<p>Naviagate to chrome and use following URL to access the <a href="chrome://extensions">extension page</a></p>
+<p>and hit load unpacked button and select the dist directory created inside this repository, your new tab should show the to-do list</p>
+<h2 id="some-features-added-in-todo-queue">Some features added in Todo Queue</h2>
+<ul>
+<li>Associate tasks with priority</li>
+<li>Associate tasks with deadline</li>
+<li>Generate notes of task completed/incomplete on daily basis for tracking purpose</li>
+<li>Allow dragging tasks up/down so that we can order tasks</li>
+</ul>
+<p>Pull requests are always welcome :)</p>
+
+        
+        
+    </body>
+    </html>
