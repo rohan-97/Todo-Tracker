@@ -2,6 +2,7 @@ const TASKS_KEY = "tasks";
 const ACTIVE_TASKS_KEY = "activeTasks";
 const HISTORY_KEY = "history";
 const TOP_TASK_ID_KEY = "topTaskId";
+const PERSISTENT_TASKS = "persistentTasks";
 
 function get_tasks() {
   return _get_entry_from_local_storage(TASKS_KEY, {});
@@ -9,6 +10,17 @@ function get_tasks() {
 function set_tasks(entry: object) {
   return _set_entry_in_local_storage(TASKS_KEY, entry);
 }
+
+function get_persistent_tasks() {
+  return _get_entry_from_local_storage(PERSISTENT_TASKS, []);
+}
+function set_persistent_tasks(entry: number[]) {
+  return _set_entry_in_local_storage(PERSISTENT_TASKS, _removeDuplicates(entry));
+}
+
+function _removeDuplicates(arr:number[]) { 
+  return [...new Set(arr)]; 
+} 
 
 function get_active_tasks() {
   return _get_entry_from_local_storage(ACTIVE_TASKS_KEY);
@@ -52,6 +64,8 @@ const modelObj = {
   set_history,
   get_task_id,
   set_task_id,
+  get_persistent_tasks,
+  set_persistent_tasks,
 };
 
 export default modelObj;
