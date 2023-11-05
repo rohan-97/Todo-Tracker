@@ -58,7 +58,7 @@ body{
 	border: 3px solid #2980b9;
 	outline: none;
 }
-.fa-check-circle{ 
+.right-floater{ 
 	float: right;
 }
 .todo-span{
@@ -78,16 +78,28 @@ body{
 }
 
 
-.rohan-task-list-item {
+.task-list-item {
     list-style-type: none;
 }
-.rohan-task-list-item-checkbox {
+.task-list-item-checkbox {
     margin-left: -20px;
     vertical-align: middle;
+	margin-right: 5px;
     pointer-events: none;
 }
 .history {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
 	font-size: 14px;
 	line-height: 1.6;
+}
+#offcanvasRightLabel {
+  font-size: 3rem;
+  margin-top: 0;
+}
+.borderless {
+  border: 0;
+  border-radius: 0;
+}
+.modal-content {
+	border-radius: 0;
 }

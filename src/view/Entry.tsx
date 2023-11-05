@@ -12,8 +12,8 @@ function Entry({onSelect, onDelete, id, text, isDone}:props) {
   const [strike, setStrike] = useState(isDone);
 
   return (
-    <li id={id} className={(strike)?"check":""} onClick={() => {setStrike(!strike); onSelect(id)}}>
-      <span onClick={() => {onDelete(id)}}>
+    <li id={id} className={(strike)?"check todo-li":"todo-li"} onClick={() => {setStrike(!strike); onSelect(id)}}>
+      <span className="todo-span" onClick={(event) => {onDelete(id); event.stopPropagation()}}>
         <i className="fa fa-trash"></i>
       </span>
       {text}

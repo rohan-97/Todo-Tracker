@@ -31,11 +31,9 @@ function _get_current_time_in_epoch() {
   return Date.now();
 }
 
-function _get_current_date_number() {
+function get_current_date_number() {
   let current_epoch = _get_current_time_in_epoch();
   let current_date = Math.floor(current_epoch / MILLI_SECONDS_IN_A_DAY);
-  console.log("Current_epoch: " + current_epoch);
-  console.log("Current_date: " + current_date);
   return current_date;
 }
 
@@ -48,10 +46,13 @@ function toggle_check(task_id: number) {
   modelObj.set_tasks(tasks);
 }
 
-function remove_task_from_active_list(task_id: number) {
+function delete_task_entry(task_id: number) {
   let active_tasks = modelObj.get_active_tasks();
   active_tasks = active_tasks.filter((t_id: number) => t_id != task_id);
   modelObj.set_active_tasks(active_tasks);
+  let tasks = modelObj.get_tasks()
+  delete tasks[task_id]
+  modelObj.set_tasks(tasks)
 }
 
 function list_active_tasks() {
@@ -66,29 +67,53 @@ function _populate_task_data(task_id: number) {
   return temp_obj;
 }
 
+function get_tasks_history() {
+  return modelObj.get_history()
+}
+
+function get_epoch_from_day(epoch_day:number) {
+  return epoch_day*MILLI_SECONDS_IN_A_DAY
+}
+
+function _prepare_task_obj(task_id:number) {
+  return {
+    "taskId": task_id,
+    "taskStatus": get_task_from_id(task_id).isDone
+  }
+}
+
+function get_todays_task_object_list() {
+  return modelObj.get_active_tasks().map(_prepare_task_obj)
+}
+
 function clean_yesterdays_tasks() {
-  let today = _get_current_date_number();
+  let today = get_current_date_number();
   let tasks = modelObj.get_tasks();
   let history = modelObj.get_history();
   if (history.hasOwnProperty(today - 1)) {
     return;
   }
-  history[today - 1] = modelObj.get_active_tasks();
+  const active_tasks = modelObj.get_active_tasks();
+  if(active_tasks.length === 0)
+    return;
+  history[today - 1] = active_tasks.map(_prepare_task_obj);
   modelObj.set_active_tasks(
-    modelObj
-      .get_active_tasks()
-      .filter((task_id: number) => tasks[task_id].isDone != true)
+    active_tasks.filter((task_id: number) => tasks[task_id].isDone != true)
   );
   modelObj.set_history(history);
 }
 
 const controllerObj = {
   create_task,
-  remove_task_from_active_list,
+  delete_task_entry,
   list_active_tasks,
   toggle_check,
   clean_yesterdays_tasks,
   get_task_from_id,
   get_active_tasks_ids,
+  get_tasks_history,
+  get_epoch_from_day,
+  get_current_date_number,
+  get_todays_task_object_list,
 };
 export default controllerObj;
