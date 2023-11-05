@@ -13,6 +13,10 @@ Click on Load Unpacked and select the downloaded/cloned directory
 Following is the working demo of the New Tab extension
 ![working-demo](https://github.com/rohan-97/NewTab-Chrome-Extention/blob/master/to_do_list.gif)
 
+## Install directory from chrome web store
+
+You can [click here](https://chrome.google.com/webstore/detail/todo-tracker/janilffnfjijnlakfjpaopbpadomhboh) to navigate to chrome web store where you can install this extension
+
 ## Steps for building extension
 
 install npm on the system and navigate to the root directory of this project and execute following commands
