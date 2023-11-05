@@ -13,7 +13,7 @@ function HistorySidebar() {
   return (
     <>
       <Button variant="outline" onClick={handleShow} className="me-2 borderless">
-      <i className="fa fa-list-ul fa-2x"></i>
+      <i className="fa fa-list-check fa-2x"></i>
       </Button>
       <Offcanvas show={show} onHide={handleClose} placement='end'>
         <Offcanvas.Header closeButton>

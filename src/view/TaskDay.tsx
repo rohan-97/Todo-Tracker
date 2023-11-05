@@ -4,25 +4,13 @@ import Task from "./Task";
 interface props {
   dayEpoch: number;
   dayTasks: object[];
+  monthMapping: string[];
+  onTaskClick: (completionTime:number, creationTime:number, isDone:boolean, content:string)=>void;
 }
 
-function TaskDay({ dayEpoch, dayTasks }: props) {
+function TaskDay({ dayEpoch, dayTasks, monthMapping, onTaskClick }: props) {
   dayEpoch = controllerObj.get_epoch_from_day(dayEpoch);
   const dayMapping = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const monthMapping = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
   const formatDayFromEpoch = (epochTime: number) => {
     const dObj = new Date(epochTime);
     let res = dayMapping[dObj.getDay()];
@@ -33,7 +21,7 @@ function TaskDay({ dayEpoch, dayTasks }: props) {
   };
 
   const getTask = (taskObj:any)=> {
-    return <Task key={taskObj.taskId} taskId={taskObj.taskId} taskStatus={taskObj.taskStatus}></Task>;
+    return <Task key={taskObj.taskId} taskId={taskObj.taskId} taskStatus={taskObj.taskStatus} onTaskClick={onTaskClick}></Task>;
   }
   return (
     <>
