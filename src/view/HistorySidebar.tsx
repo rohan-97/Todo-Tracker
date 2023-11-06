@@ -19,7 +19,7 @@ function HistorySidebar() {
       <Offcanvas show={show} onHide={handleClose} placement='end'>
         <Offcanvas.Header>
           <Offcanvas.Title id='offcanvasRightLabel'>History</Offcanvas.Title>
-          <Button variant="outline" onClick={() =>{controllerObj.delete_history; handleClose()}} className="me-2 borderless"><i className="fa fa-trash-can fa-2x"></i></Button>
+          <Button variant="outline" onClick={() =>{controllerObj.delete_history(); handleClose()}} className="me-2 borderless"><i className="fa fa-trash-can fa-2x"></i></Button>
         </Offcanvas.Header>
         <Offcanvas.Body className='history'>
           <TaskList/>
