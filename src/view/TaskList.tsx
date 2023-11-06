@@ -49,7 +49,7 @@ function TaskList() {
   const getTimeFromEpoch = (epochTime:number) => {
     const dobj = new Date(epochTime);
     const hr = dobj.getHours();
-    const am = (hr > 12)?" AM ":" PM ";
+    const am = ((hr) > 12)?" PM ":" AM ";
     const min = dobj.getMinutes();
     const date = dobj.getDate();
     const month = monthMapping[dobj.getMonth()];
