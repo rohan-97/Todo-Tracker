@@ -3,13 +3,6 @@ A google chrome extension for customized new tab which displays a to-do list
 
 Increase your productivity by adding to-do list right at your Newtab screen of your browser
 
-Setps to load the extension:
-
-Clone this repository or downlaod the zip file  
-Open Google chrome and navigate to chrome://extensions/  
-Enable Developer mode and you will be able to see Load Unpacked option  
-Click on Load Unpacked and select the downloaded/cloned directory  
-
 Following is the working demo of the New Tab extension
 ![working-demo](https://github.com/rohan-97/NewTab-Chrome-Extention/blob/master/to_do_list.gif)
 
@@ -17,10 +10,11 @@ Following is the working demo of the New Tab extension
 
 You can [click here](https://chrome.google.com/webstore/detail/todo-tracker/janilffnfjijnlakfjpaopbpadomhboh) to navigate to chrome web store where you can install this extension
 
-## Steps for building extension
+## Steps for building extension and setting up locally
 
-install npm on the system and navigate to the root directory of this project and execute following commands
+install npm on the system and navigate to the root dir0ectory of this project and execute following commands
 
+1. Clone this repository or download the zip file  
 
 1. Initialize the node modules using following command
 ```
@@ -46,5 +40,6 @@ and hit load unpacked button and select the dist directory created inside this r
  - Associate tasks with deadline
  - Generate notes of task completed/incomplete on daily basis for tracking purpose
  - Allow dragging tasks up/down so that we can order tasks
+ - Make background customizable
 
 Pull requests are always welcome :)
